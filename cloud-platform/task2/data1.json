@@ -1,0 +1,728 @@
+{"instances": [
+  {
+    "id": "c0002",
+    "service_id": "369fb62a-6341-4581-8ed0-b355f7c3093a",
+    "configurations":       [
+      {
+        "name": "apex_url",
+        "display_name": "Application Express URL",
+        "key": "https://129.157.129.50/apex/mypdb/",
+        "value": "https://129.157.129.50/apex/mypdb/",
+        "in_list": false
+      },
+      {
+        "name": "backup_destination",
+        "display_name": "Backup Destination",
+        "key": "BOTH",
+        "value": "BOTH",
+        "in_list": false
+      },
+      {
+        "name": "backup_supported_version",
+        "display_name": "Backup Supported Version",
+        "key": "16.2.3",
+        "value": "16.2.3",
+        "in_list": false
+      },
+      {
+        "name": "charset",
+        "display_name": "Character Set",
+        "key": "AL32UTF8",
+        "value": "AL32UTF8",
+        "in_list": false
+      },
+      {
+        "name": "cloud_storage_container",
+        "display_name": "Storage Cloud container",
+        "key": "Storage-cnzhongxin/zx_db_backup",
+        "value": "Storage-cnzhongxin/zx_db_backup",
+        "in_list": false
+      },
+      {
+        "name": "compute_site_name",
+        "display_name": "Compute Site Name",
+        "key": "US006_Z50",
+        "value": "US006_Z50",
+        "in_list": false
+      },
+      {
+        "name": "connect_descriptor",
+        "display_name": "Connect Descriptor",
+        "key": "dh-test002:1521/MYPDB.cnzhongxin.oraclecloud.internal",
+        "value": "dh-test002:1521/MYPDB.cnzhongxin.oraclecloud.internal",
+        "in_list": false
+      },
+      {
+        "name": "connect_descriptor_with_public_ip",
+        "display_name": "Connect Descriptor With Public IP",
+        "key": "129.157.129.50:1521/MYPDB.cnzhongxin.oraclecloud.internal",
+        "value": "129.157.129.50:1521/MYPDB.cnzhongxin.oraclecloud.internal",
+        "in_list": false
+      },
+      {
+        "name": "created_by",
+        "display_name": "Created By",
+        "key": "wanghl6@citic.com",
+        "value": "wanghl6@citic.com",
+        "in_list": false
+      },
+      {
+        "name": "creation_job_id",
+        "display_name": "Creation Job id",
+        "key": "13348876",
+        "value": "13348876",
+        "in_list": false
+      },
+      {
+        "name": "creation_time",
+        "display_name": "Creation Time",
+        "key": "2017-07-11T02:15:05.620+0000",
+        "value": "2017-07-11T02:15:05.620+0000",
+        "in_list": false
+      },
+      {
+        "name": "current_version",
+        "display_name": "Current Version",
+        "key": "12.1.0.2.170418",
+        "value": "12.1.0.2.170418",
+        "in_list": false
+      },
+      {
+        "name": "dbaasmonitor_url",
+        "display_name": "DBaaS Monitor URL",
+        "key": "https://129.157.129.50/dbaas_monitor",
+        "value": "https://129.157.129.50/dbaas_monitor",
+        "in_list": false
+      },
+      {
+        "name": "description",
+        "display_name": "Description",
+        "key": "dh test dbcs service instance",
+        "value": "dh test dbcs service instance",
+        "in_list": false
+      },
+      {
+        "name": "edition",
+        "display_name": "Software Edition",
+        "key": "EE_HP",
+        "value": "EE_HP",
+        "in_list": false
+      },
+      {
+        "name": "edition",
+        "display_name": "Software Edition",
+        "key": "EE_HP",
+        "value": "EE_HP",
+        "in_list": false
+      },
+      {
+        "name": "em_url",
+        "display_name": "EM URL",
+        "key": "https://129.157.129.50:5500/em",
+        "value": "https://129.157.129.50:5500/em",
+        "in_list": false
+      },
+      {
+        "name": "failover_database",
+        "display_name": "Whether hosts an Oracle Data Guard configuration",
+        "key": "false",
+        "value": "false",
+        "in_list": false
+      },
+      {
+        "name": "glassfish_url",
+        "display_name": "GlassFish Server URL",
+        "key": "",
+        "value": "",
+        "in_list": false
+      },
+      {
+        "name": "identity_domain",
+        "display_name": "Identity Domain",
+        "key": "cnzhongxin",
+        "value": "cnzhongxin",
+        "in_list": false
+      },
+      {
+        "name": "jaas_instances_using_service",
+        "display_name": "Oracle Java Cloud Service Instances",
+        "key": "JCS-01",
+        "value": "JCS-01",
+        "in_list": false
+      },
+      {
+        "name": "last_modified_time",
+        "display_name": "Last Modified Time",
+        "key": "2017-07-11T02:15:05.594+0000",
+        "value": "2017-07-11T02:15:05.594+0000",
+        "in_list": false
+      },
+      {
+        "name": "level",
+        "display_name": "Service level",
+        "key": "PAAS",
+        "value": "PAAS",
+        "in_list": false
+      },
+      {
+        "name": "listenerPort",
+        "display_name": "SQL *Net Port",
+        "key": "1521",
+        "value": "1521",
+        "in_list": false
+      },
+      {
+        "name": "ncharset",
+        "display_name": "National Character Set",
+        "key": "AL16UTF16",
+        "value": "AL16UTF16",
+        "in_list": false
+      },
+      {
+        "name": "num_ip_reservations",
+        "display_name": "Oracle Compute Service IP reservations",
+        "key": "1",
+        "value": "1",
+        "in_list": false
+      },
+      {
+        "name": "num_nodes",
+        "display_name": "Compute Nodes",
+        "key": "1",
+        "value": "1",
+        "in_list": false
+      },
+      {
+        "name": "pdbName",
+        "display_name": "PDB Name",
+        "key": "MYPDB",
+        "value": "MYPDB",
+        "in_list": false
+      },
+      {
+        "name": "rac_database",
+        "display_name": "Oracle RAC database",
+        "key": "false",
+        "value": "false",
+        "in_list": false
+      },
+      {
+        "name": "service_name",
+        "display_name": "Service Name",
+        "key": "dh-test002",
+        "value": "dh-test002",
+        "in_list": false
+      },
+      {
+        "name": "service_uri",
+        "display_name": "REST endpoint URI",
+        "key": "https://dbaas.oraclecloud.com:443/paas/service/dbcs/api/v1.1/instances/cnzhongxin/dh-test002",
+        "value": "https://dbaas.oraclecloud.com:443/paas/service/dbcs/api/v1.1/instances/cnzhongxin/dh-test002",
+        "in_list": false
+      },
+      {
+        "name": "shape",
+        "display_name": "Compute Shape",
+        "key": "oc3",
+        "value": "oc3",
+        "in_list": false
+      },
+      {
+        "name": "sid",
+        "display_name": "SID",
+        "key": "ORCL",
+        "value": "ORCL",
+        "in_list": false
+      },
+      {
+        "name": "sm_plugin_version",
+        "display_name": "Service Manager Plugin Version",
+        "key": "17.3.1-547",
+        "value": "17.3.1-547",
+        "in_list": false
+      },
+      {
+        "name": "status",
+        "display_name": "Status",
+        "key": "Running",
+        "value": "Running",
+        "in_list": false
+      },
+      {
+        "name": "subscriptionType",
+        "display_name": "Metering Frequency",
+        "key": "MONTHLY",
+        "value": "MONTHLY",
+        "in_list": false
+      },
+      {
+        "name": "timezone",
+        "display_name": "Timezone",
+        "key": "UTC",
+        "value": "UTC",
+        "in_list": false
+      },
+      {
+        "name": "total_shared_storage",
+        "display_name": "Total Shared Storage",
+        "key": "",
+        "value": "",
+        "in_list": false
+      },
+      {
+        "name": "version",
+        "display_name": "Version",
+        "key": "12.1.0.2",
+        "value": "12.1.0.2",
+        "in_list": false
+      }
+    ],
+    "operations":       [
+      {
+        "name": "start",
+        "display_name": "Start"
+      },
+      {
+        "name": "stop",
+        "display_name": "Stop"
+      },
+      {
+        "name": "restart",
+        "display_name": "Restart"
+      },
+      {
+        "name": "backup",
+        "display_name": "Backup"
+      },
+      {
+        "name": "recovery",
+        "display_name": "Recovery",
+        "config_options":             [
+          {
+            "name": "latest",
+            "required": false,
+            "display_name": "Latest Available Backup",
+            "data_type": "string",
+            "default": ""
+          },
+          {
+            "name": "scn",
+            "required": false,
+            "display_name": "System Change Number",
+            "data_type": "string",
+            "default": ""
+          },
+          {
+            "name": "tag",
+            "required": false,
+            "display_name": "Database Tag",
+            "data_type": "string",
+            "default": ""
+          },
+          {
+            "name": "timestamp",
+            "required": false,
+            "display_name": "Timestamp",
+            "data_type": "string",
+            "default": ""
+          }
+        ]
+      },
+      {
+        "name": "patch",
+        "display_name": "Apply a Patch",
+        "config_options":             [
+          {
+            "name": "patchId",
+            "required": true,
+            "display_name": "Patch ID",
+            "data_type": "string",
+            "default": ""
+          },
+          {
+            "name": "additionalNote",
+            "required": false,
+            "display_name": "Additional Information",
+            "data_type": "string",
+            "default": ""
+          },
+          {
+            "name": "forceApply",
+            "required": false,
+            "display_name": "Force Apply",
+            "default": "false"
+          },
+          {
+            "name": "switchOver",
+            "required": false,
+            "display_name": "Switch Over",
+            "default": "false"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "c0005",
+    "service_id": "369fb62a-6341-4581-8ed0-b355f7c3093a",
+    "configurations":       [
+      {
+        "name": "apex_url",
+        "display_name": "Application Express URL",
+        "key": "",
+        "value": "",
+        "in_list": false
+      },
+      {
+        "name": "backup_destination",
+        "display_name": "Backup Destination",
+        "key": "NONE",
+        "value": "NONE",
+        "in_list": false
+      },
+      {
+        "name": "backup_supported_version",
+        "display_name": "Backup Supported Version",
+        "key": "",
+        "value": "",
+        "in_list": false
+      },
+      {
+        "name": "charset",
+        "display_name": "Character Set",
+        "key": "AL32UTF8",
+        "value": "AL32UTF8",
+        "in_list": false
+      },
+      {
+        "name": "cloud_storage_container",
+        "display_name": "Storage Cloud container",
+        "key": "",
+        "value": "",
+        "in_list": false
+      },
+      {
+        "name": "compute_site_name",
+        "display_name": "Compute Site Name",
+        "key": "US006_Z50",
+        "value": "US006_Z50",
+        "in_list": false
+      },
+      {
+        "name": "connect_descriptor",
+        "display_name": "Connect Descriptor",
+        "key": "",
+        "value": "",
+        "in_list": false
+      },
+      {
+        "name": "connect_descriptor_with_public_ip",
+        "display_name": "Connect Descriptor With Public IP",
+        "key": "",
+        "value": "",
+        "in_list": false
+      },
+      {
+        "name": "created_by",
+        "display_name": "Created By",
+        "key": "wanghl6@citic.com",
+        "value": "wanghl6@citic.com",
+        "in_list": false
+      },
+      {
+        "name": "creation_job_id",
+        "display_name": "Creation Job id",
+        "key": "13415490",
+        "value": "13415490",
+        "in_list": false
+      },
+      {
+        "name": "creation_time",
+        "display_name": "Creation Time",
+        "key": "2017-07-13T03:23:30.604+0000",
+        "value": "2017-07-13T03:23:30.604+0000",
+        "in_list": false
+      },
+      {
+        "name": "current_version",
+        "display_name": "Current Version",
+        "key": "",
+        "value": "",
+        "in_list": false
+      },
+      {
+        "name": "dbaasmonitor_url",
+        "display_name": "DBaaS Monitor URL",
+        "key": "",
+        "value": "",
+        "in_list": false
+      },
+      {
+        "name": "description",
+        "display_name": "Description",
+        "key": "dh test dbcs service instance",
+        "value": "dh test dbcs service instance",
+        "in_list": false
+      },
+      {
+        "name": "edition",
+        "display_name": "Software Edition",
+        "key": "SE",
+        "value": "SE",
+        "in_list": false
+      },
+      {
+        "name": "edition",
+        "display_name": "Software Edition",
+        "key": "SE",
+        "value": "SE",
+        "in_list": false
+      },
+      {
+        "name": "em_url",
+        "display_name": "EM URL",
+        "key": "",
+        "value": "",
+        "in_list": false
+      },
+      {
+        "name": "failover_database",
+        "display_name": "Whether hosts an Oracle Data Guard configuration",
+        "key": "false",
+        "value": "false",
+        "in_list": false
+      },
+      {
+        "name": "glassfish_url",
+        "display_name": "GlassFish Server URL",
+        "key": "",
+        "value": "",
+        "in_list": false
+      },
+      {
+        "name": "identity_domain",
+        "display_name": "Identity Domain",
+        "key": "cnzhongxin",
+        "value": "cnzhongxin",
+        "in_list": false
+      },
+      {
+        "name": "jaas_instances_using_service",
+        "display_name": "Oracle Java Cloud Service Instances",
+        "key": "",
+        "value": "",
+        "in_list": false
+      },
+      {
+        "name": "last_modified_time",
+        "display_name": "Last Modified Time",
+        "key": "2017-07-13T03:23:30.574+0000",
+        "value": "2017-07-13T03:23:30.574+0000",
+        "in_list": false
+      },
+      {
+        "name": "level",
+        "display_name": "Service level",
+        "key": "PAAS",
+        "value": "PAAS",
+        "in_list": false
+      },
+      {
+        "name": "listenerPort",
+        "display_name": "SQL *Net Port",
+        "key": "1521",
+        "value": "1521",
+        "in_list": false
+      },
+      {
+        "name": "ncharset",
+        "display_name": "National Character Set",
+        "key": "AL16UTF16",
+        "value": "AL16UTF16",
+        "in_list": false
+      },
+      {
+        "name": "num_ip_reservations",
+        "display_name": "Oracle Compute Service IP reservations",
+        "key": "1",
+        "value": "1",
+        "in_list": false
+      },
+      {
+        "name": "num_nodes",
+        "display_name": "Compute Nodes",
+        "key": "1",
+        "value": "1",
+        "in_list": false
+      },
+      {
+        "name": "pdbName",
+        "display_name": "PDB Name",
+        "key": "MYPDB",
+        "value": "MYPDB",
+        "in_list": false
+      },
+      {
+        "name": "rac_database",
+        "display_name": "Oracle RAC database",
+        "key": "false",
+        "value": "false",
+        "in_list": false
+      },
+      {
+        "name": "service_name",
+        "display_name": "Service Name",
+        "key": "dh-test005",
+        "value": "dh-test005",
+        "in_list": false
+      },
+      {
+        "name": "service_uri",
+        "display_name": "REST endpoint URI",
+        "key": "https://dbaas.oraclecloud.com:443/paas/service/dbcs/api/v1.1/instances/cnzhongxin/dh-test005",
+        "value": "https://dbaas.oraclecloud.com:443/paas/service/dbcs/api/v1.1/instances/cnzhongxin/dh-test005",
+        "in_list": false
+      },
+      {
+        "name": "shape",
+        "display_name": "Compute Shape",
+        "key": "oc3",
+        "value": "oc3",
+        "in_list": false
+      },
+      {
+        "name": "sid",
+        "display_name": "SID",
+        "key": "ORCL",
+        "value": "ORCL",
+        "in_list": false
+      },
+      {
+        "name": "sm_plugin_version",
+        "display_name": "Service Manager Plugin Version",
+        "key": "17.3.1-547",
+        "value": "17.3.1-547",
+        "in_list": false
+      },
+      {
+        "name": "status",
+        "display_name": "Status",
+        "key": "In Progress",
+        "value": "In Progress",
+        "in_list": false
+      },
+      {
+        "name": "subscriptionType",
+        "display_name": "Metering Frequency",
+        "key": "MONTHLY",
+        "value": "MONTHLY",
+        "in_list": false
+      },
+      {
+        "name": "timezone",
+        "display_name": "Timezone",
+        "key": "UTC",
+        "value": "UTC",
+        "in_list": false
+      },
+      {
+        "name": "total_shared_storage",
+        "display_name": "Total Shared Storage",
+        "key": "",
+        "value": "",
+        "in_list": false
+      },
+      {
+        "name": "version",
+        "display_name": "Version",
+        "key": "12.1.0.2",
+        "value": "12.1.0.2",
+        "in_list": false
+      }
+    ],
+    "operations":       [
+      {
+        "name": "start",
+        "display_name": "Start"
+      },
+      {
+        "name": "stop",
+        "display_name": "Stop"
+      },
+      {
+        "name": "restart",
+        "display_name": "Restart"
+      },
+      {
+        "name": "backup",
+        "display_name": "Backup"
+      },
+      {
+        "name": "recovery",
+        "display_name": "Recovery",
+        "config_options":             [
+          {
+            "name": "latest",
+            "required": false,
+            "display_name": "Latest Available Backup",
+            "data_type": "string",
+            "default": ""
+          },
+          {
+            "name": "scn",
+            "required": false,
+            "display_name": "System Change Number",
+            "data_type": "string",
+            "default": ""
+          },
+          {
+            "name": "tag",
+            "required": false,
+            "display_name": "Database Tag",
+            "data_type": "string",
+            "default": ""
+          },
+          {
+            "name": "timestamp",
+            "required": false,
+            "display_name": "Timestamp",
+            "data_type": "string",
+            "default": ""
+          }
+        ]
+      },
+      {
+        "name": "patch",
+        "display_name": "Apply a Patch",
+        "config_options":             [
+          {
+            "name": "patchId",
+            "required": true,
+            "display_name": "Patch ID",
+            "data_type": "string",
+            "default": ""
+          },
+          {
+            "name": "additionalNote",
+            "required": false,
+            "display_name": "Additional Information",
+            "data_type": "string",
+            "default": ""
+          },
+          {
+            "name": "forceApply",
+            "required": false,
+            "display_name": "Force Apply",
+            "default": "false"
+          },
+          {
+            "name": "switchOver",
+            "required": false,
+            "display_name": "Switch Over",
+            "default": "false"
+          }
+        ]
+      }
+    ]
+  }
+]}

@@ -1,0 +1,26 @@
+{
+  "instance_id":"c0004",
+  "service_id":"369fb62a-6341-4581-8ed0-b355f7c3093a",
+  "org_id":"citicbank",
+  "accepts_incomplete":true,
+  "parameters":{
+    "shape":"oc3",
+    "level":"PAAS",
+    "subscriptionType":"MONTHLY",
+    "description":"dh test dbcs service instance",
+    "edition":"SE",
+    "serviceName":"dh-test004" ,
+    "vmPublicKeyText":"ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA1P+JR4mFTZdpp9OLDNO70belCNEORLt777TRZk6kKk/DGy+Vmnfc/MhfF6187CuSBMfqZ9vhInXw4PXOFjt2+9rgL+wTgqpFv1g5EmEMKYiVuDzF4yQqQxpc6a3jM6EzZtQB49OCR1G7PbrPseCRaSLqG0b0qhA+1Zzvd9P021uVG2vnpsTmjpDSAl/UHJLLIC0pgigEVXi/HrtwkUPjM63ppCQaeCd0ZxxBAaqh7MHL2DjJo2LVNC4SwuXTE56xg3pXPiL5wI9xv53GzH7NEHBLpA0GAaI8idaNFvwIm1N7OBZvoEjXjHFSQ0KGFTOb9ML3YDKtfJo6Ic716ZHPmw== root@x12bj195041",
+    "version":"12.1.0.2",
+    "usableStorage":"16",
+    "pdbName":"MYPDB",
+    "failoverDatabase":"no",
+    "type":"db",
+    "adminPassword":"Welcome_1",
+    "sid":"ORCL",
+    "backupDestination":"NONE"
+  },
+  "pricing_model":{"mode":"package","unit":"monthly","amount":"12"}
+}
+
+

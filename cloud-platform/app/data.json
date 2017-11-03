@@ -1,0 +1,370 @@
+{
+  "suppliers": [
+    {
+      "id": "5eec3b37-33f4-4cde-a8ff-347b17bf7b8b",
+      "citic_org_id": null,
+      "name": "oracle",
+      "score": "85",
+      "is_a_citic": false,
+      "lan": false,
+      "payment": {
+        "deposit_bank": "招商银行XXXX支行",
+        "account": "甲骨文（中国）软件系统有限公司",
+        "account_number": "8888888888888888"
+      },
+      "credential": {
+        "username": "wanghl6@citic.com",
+        "password": "Zhongxin123!"
+      },
+      "metadata": {
+        "display_name": "甲骨文云",
+        "description": "甲骨文云在业内是一款覆盖面非常广、集成度非常高的公有云",
+        "long_description": "甲骨文云在业内是一款覆盖面非常广、集成度非常高的公有云。它在软件即服务 (SaaS)、平台即服务 (PaaS) 和基础设施即服务 (IaaS) 这些领域提供先进的云服务，甚至允许您将 Oracle 云置于您自己的数据中心内。Oracle 云可提高业务敏捷性、降低成本并降低 IT 复杂性，从而帮助公司推动创新和业务转型。",
+        "markdown_desc": null,
+        "image_url": "https://cloud.oracle.com/res/images/header/oracle-cloud-logo.png",
+        "document_url": "https://docs.oracle.com/en/cloud/",
+        "support_url": "http://support.oracle.com/"
+      },
+      "services": [
+        {
+          "id": "369fb62a-6341-4581-8ed0-b355f7c3093a",
+          "name": "dbaas",
+          "score": "99",
+          "price": null,
+          "customizable": false,
+          "verify_required": false,
+          "editable": false,
+          "metadata": null,
+          "config_options": [
+            {
+              "name": "description",
+              "required": false,
+              "display_name": "Description",
+              "data_type": "string",
+              "default": "dh test dbcs service instance"
+            },
+            {
+              "name": "edition",
+              "required": true,
+              "display_name": "Software Edition",
+              "data_type": "options",
+              "default": "SE",
+              "values": [
+                {
+                  "key": "SE",
+                  "value": "Standard Edition",
+                  "info": null,
+                  "sub_config_options": null
+                },
+                {
+                  "key": "EE",
+                  "value": "Enterprise Edition",
+                  "info": null,
+                  "sub_config_options": null
+                },
+                {
+                  "key": "EE_HP",
+                  "value": "Enterprise Edition - High Performance",
+                  "info": null,
+                  "sub_config_options": null
+                },
+                {
+                  "key": "EE_EP",
+                  "value": "Enterprise Edition - Extreme Performance",
+                  "info": null,
+                  "sub_config_options": null
+                }
+              ]
+            },
+            {
+              "name": "level",
+              "required": true,
+              "display_name": "Service level",
+              "data_type": "options",
+              "default": "PAAS",
+              "values": [
+                {
+                  "key": "PAAS",
+                  "value": "PAAS",
+                  "info": null,
+                  "sub_config_options": null
+                },
+                {
+                  "key": "BASIC",
+                  "value": "BASIC",
+                  "info": null,
+                  "sub_config_options": null
+                }
+              ]
+            },
+            {
+              "name": "db_demo",
+              "required": true,
+              "display_name": "Whether to include the Demos PDB",
+              "data_type": "string",
+              "default": "no",
+              "values": [
+                {
+                  "key": "yes",
+                  "value": "Yes",
+                  "info": null,
+                  "sub_config_options": null
+                },
+                {
+                  "key": "no",
+                  "value": "No",
+                  "info": null,
+                  "sub_config_options": null
+                }
+              ]
+            },
+            {
+              "name": "adminPassword",
+              "required": true,
+              "display_name": "Administration Password",
+              "data_type": "string",
+              "default": "Welcome_1",
+              "instruction": "Starts with a letter.Is between 8 and 30 characters long.Contains letters, at least one number, and optionally, any number of these special characters: dollar sign ($), pound sign (#), and underscore (_)."
+            },
+            {
+              "name": "backupDestination",
+              "required": true,
+              "display_name": "Backup Destination",
+              "data_type": "options",
+              "default": "NONE",
+              "values": [
+                {
+                  "key": "BOTH",
+                  "value": "Both Cloud Storage and Local Storage",
+                  "info": null,
+                  "sub_config_options": null
+                },
+                {
+                  "key": "OSS",
+                  "value": "Cloud Storage only",
+                  "info": null,
+                  "sub_config_options": null
+                },
+                {
+                  "key": "NONE",
+                  "value": "None",
+                  "info": null,
+                  "sub_config_options": null
+                }
+              ]
+            },
+            {
+              "name": "charset",
+              "required": false,
+              "display_name": "Character Set",
+              "data_type": "string",
+              "default": "AL32UTF8"
+            },
+            {
+              "name": "cloudStorageContainer",
+              "required": false,
+              "display_name": "Cloud Storage Container",
+              "data_type": "string",
+              "default": ""
+            },
+            {
+              "name": "cloudStoragePwd",
+              "required": false,
+              "display_name": "Password for the Oracle Storage Cloud Service administrator",
+              "data_type": "string",
+              "default": ""
+            },
+            {
+              "name": "cloudStorageUser",
+              "required": false,
+              "display_name": "Username for the Oracle Storage Cloud Service administrator",
+              "data_type": "string",
+              "default": ""
+            },
+            {
+              "name": "ncharset",
+              "required": false,
+              "display_name": "National Character Set",
+              "data_type": "string",
+              "default": "AL16UTF16"
+            },
+            {
+              "name": "pdbName",
+              "required": false,
+              "display_name": "PDB Name",
+              "data_type": "string",
+              "default": "MYPDB",
+              "instruction": "This attribute is valid when Database Cloud Service instance is configured with version 12c."
+            },
+            {
+              "name": "sid",
+              "required": true,
+              "display_name": "DB Name(SID)",
+              "data_type": "string",
+              "default": "ORCL"
+            },
+            {
+              "name": "timezone",
+              "required": false,
+              "display_name": "Time Zone",
+              "data_type": "string",
+              "default": "UTC"
+            },
+            {
+              "name": "type",
+              "required": true,
+              "display_name": "Component type",
+              "data_type": "string",
+              "default": "db"
+            },
+            {
+              "name": "usableStorage",
+              "required": true,
+              "display_name": "Usable Database Storage(GB)",
+              "data_type": "string",
+              "default": "16"
+            },
+            {
+              "name": "serviceName",
+              "required": true,
+              "display_name": "Service Name",
+              "data_type": "string",
+              "default": "db-test-005",
+              "instruction": "Must not exceed 50 characters.Must start with a letter.Must contain only letters, numbers, or hyphens.Must not contain any other special characters.Must be unique within the identity domain."
+            },
+            {
+              "name": "shape",
+              "required": true,
+              "display_name": "Compute shape",
+              "data_type": "options",
+              "default": "oc3",
+              "values": [
+                {
+                  "key": "oc3",
+                  "value": "oc3: 1 OCPU, 7.5 GB memory",
+                  "info": null,
+                  "sub_config_options": null
+                },
+                {
+                  "key": "oc4",
+                  "value": "oc4: 2 OCPUs, 15 GB memory",
+                  "info": null,
+                  "sub_config_options": null
+                },
+                {
+                  "key": "oc5",
+                  "value": "oc5: 4 OCPUs, 30 GB memory",
+                  "info": null,
+                  "sub_config_options": null
+                },
+                {
+                  "key": "oc6",
+                  "value": "oc6: 8 OCPUs, 15 GB memory",
+                  "info": null,
+                  "sub_config_options": null
+                },
+                {
+                  "key": "oc1m",
+                  "value": "oc1m: 1 OCPU, 15 GB memory",
+                  "info": null,
+                  "sub_config_options": null
+                },
+                {
+                  "key": "oc2m",
+                  "value": "oc2m: 2 OCPUs, 30 GB memory",
+                  "info": null,
+                  "sub_config_options": null
+                },
+                {
+                  "key": "oc3m",
+                  "value": "oc3m: 4 OCPUs, 60 GB memory",
+                  "info": null,
+                  "sub_config_options": null
+                },
+                {
+                  "key": "oc4m",
+                  "value": "oc4m: 8 OCPUs, 120 GB memory",
+                  "info": null,
+                  "sub_config_options": null
+                }
+              ]
+            },
+            {
+              "name": "subscriptionType",
+              "required": true,
+              "display_name": "Metering Frequency",
+              "data_type": "options",
+              "default": "MONTHLY",
+              "values": [
+                {
+                  "key": "MONTHLY",
+                  "value": "Monthly",
+                  "info": null,
+                  "sub_config_options": null
+                },
+                {
+                  "key": "HOURLY",
+                  "value": "Hourly",
+                  "info": null,
+                  "sub_config_options": null
+                }
+              ]
+            },
+            {
+              "name": "version",
+              "required": true,
+              "display_name": "Software Release",
+              "data_type": "options",
+              "default": "12.1.0.2",
+              "values": [
+                {
+                  "key": "11.2.0.4",
+                  "value": "Oracle Database 11g Release 2",
+                  "info": null,
+                  "sub_config_options": null
+                },
+                {
+                  "key": "12.1.0.2",
+                  "value": "Oracle Database 12c Release 1",
+                  "info": null,
+                  "sub_config_options": null
+                },
+                {
+                  "key": "12.2.0.1",
+                  "value": "Oracle Database 12c Release 2",
+                  "info": null,
+                  "sub_config_options": null
+                }
+              ]
+            },
+            {
+              "name": "vmPublicKeyText",
+              "required": true,
+              "display_name": "SSH Public Key",
+              "data_type": "string",
+              "default": "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA1P+JR4mFTZdpp9OLDNO70belCNEORLt777TRZk6kKk/DGy+Vmnfc/MhfF6187CuSBMfqZ9vhInXw4PXOFjt2+9rgL+wTgqpFv1g5EmEMKYiVuDzF4yQqQxpc6a3jM6EzZtQB49OCR1G7PbrPseCRaSLqG0b0qhA+1Zzvd9P021uVG2vnpsTmjpDSAl/UHJLLIC0pgigEVXi/HrtwkUPjM63ppCQaeCd0ZxxBAaqh7MHL2DjJo2LVNC4SwuXTE56xg3pXPiL5wI9xv53GzH7NEHBLpA0GAaI8idaNFvwIm1N7OBZvoEjXjHFSQ0KGFTOb9ML3YDKtfJo6Ic716ZHPmw== root@x12bj195041"
+            }
+          ]
+        },
+        {
+          "id": "25ac1eec-28d9-4978-bbfb-cb8ae68969b9",
+          "name": "jaas",
+          "score": "99",
+          "price": null,
+          "customizable": false,
+          "verify_required": false,
+          "editable": false,
+          "metadata": null,
+          "config_options": [
+            {
+              "name": "配置项的名称，在用户选定配置后将以此域作为返回值的key",
+              "required": false,
+              "display_name": "WEB页面显示的选项名称",
+              "default": "该配置项的默认值"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

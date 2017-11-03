@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html  ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/angular.js/1.5.9/angular.min.js"></script>
+    <link rel="stylesheet" media="screen" href="hello.css" rel="external nofollow"  >
+</head>
+<style type="text/css">
+    table.hovertable {
+        font-family: verdana,arial,sans-serif;
+        font-size:11px;
+        color:#333333;
+        border-width: 1px;
+        border-color: #999999;
+        border-collapse: collapse;
+    }
+    table.hovertable th {
+        background-color:#c3dde0;
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #a9c6c9;
+    }
+    table.hovertable tr {
+        background-color:#d4e3e5;
+    }
+    table.hovertable td {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #a9c6c9;
+    }
+</style>
+
+<body>
+
+<div ng-controller="siteCtrl">
+    <table class="hovertable">
+        <tbody>
+        <tr>
+            <th>Instance ID</th>
+            <th ng-repeat="y in instance[0].configurations">{{y.display_name}}</th>
+            <th>Operation</th>
+        </tr>
+        <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';"  ng-repeat="x in instance"><!--表格样式-->
+            <td>{{x.id}}</td>
+            <td ng-repeat="y in x.configurations">{{y.value}}</td>
+       <!--    <td><select ng-model="{{x.id}}" name="{{x.id}}" id="{{x.id}}" ng-options="y.value y in x.configurations">
+            </select></td>-->
+            <td>
+                <select ng-model="choice[x.id]" ng-options="z.display_name for z in x.operations">
+                </select>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <button class="submit" type="submit" ng-click="submits()">Submit</button><!--下拉菜单选项由submit触发-->
+</div>
+</body>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('siteCtrl', function ($scope, $http) {
+       // $http.get("data1.json")
+       $http.get("adapter-management/service_instances/?service_id=369fb62a-6341-4581-8ed0-b355f7c3093a&org_id=citicbank")  //获取服务信息
+            .then(function successCallback(response) {
+                    $scope.instance = response.data.instances;
+                    $scope.choice={};
+                    $scope.del={"name": "delete","display_name":"Delete"};  //手动添加删除操作
+                    for(var i in $scope.instance)
+                    {
+                        $scope.choice[$scope.instance[i].id]=$scope.instance[i].id;
+                        $scope.instance[i].operations.push($scope.del);
+                    }
+                },
+                function errorCallback(response) {
+                    console.log("error");
+                });
+
+        $scope.submits=function () {
+            for (var i in $scope.instance) {
+                var surl= 'adapter-management/service_instances/' + $scope.instance[i].id+'/last_operation';  //服务是否可操作
+                $http.get(surl)
+                    .then(function successCallback(response) {
+                            $scope.rev=response.data;
+                            if($scope.rev.state=="succeeded")
+                            {
+                                if ($scope.choice[$scope.instance[i].id].name == "start") {    //向服务器发送请求
+                                    alert("you choose start!");
+                                    var sendData={"operation": "start"};
+                                    var sendurl='adapter-management/service_instances/'+$scope.instance[i].id;
+                                    $http({
+                                        method: "post",
+                                        url: sendurl,
+                                        headers:{
+                                            "Content-Type":'application/json;charset=UTF-8'
+                                        },
+                                        data: sendData
+                                    }).then(function successCallback(req){
+                                        console.log(req);
+                                        alert("success!");
+                                    }),
+                                        function errorCallback(req) {
+                                            alert("error!");
+                                        };
+                                }
+                                else if ($scope.choice[$scope.instance[i].id].name == "stop")
+                                {
+                                    alert("you choose Stop!");
+                                    var sendData={"operation": "stop"};
+                                    var sendurl='adapter-management/service_instances/'+$scope.instance[i].id;
+                                    $http({
+                                        method: "post",
+                                        url: sendurl,
+                                        headers:{
+                                            "Content-Type":'application/json;charset=UTF-8'
+                                        },
+                                        data: sendData
+                                    }).then(function successCallback(req){
+                                        console.log(req);
+                                        alert("success!");
+                                    }),
+                                        function errorCallback(req) {
+                                            alert("error!");
+                                        };
+                                }
+                                else if ($scope.choice[$scope.instance[i].id].name == "restart")
+                                {
+                                    alert("you choose Restart!");
+                                    var sendData={"operation": "restart"};
+                                    var sendurl='adapter-management/service_instances/'+$scope.instance[i].id;
+                                    $http({
+                                        method: "post",
+                                        url: sendurl,
+                                        headers:{
+                                            "Content-Type":'application/json;charset=UTF-8'
+                                        },
+                                        data: sendData
+                                    }).then(function successCallback(req){
+                                        console.log(req);
+                                        alert("success!");
+                                    }),
+                                        function errorCallback(req) {
+                                            alert("error!");
+                                        };
+                                }
+                                else if ($scope.choice[$scope.instance[i].id].name == "backup")
+                                {
+                                    alert("you choose Backup!");
+                                    var sendData={"operation": "backup"};
+                                    var sendurl='adapter-management/service_instances/'+$scope.instance[i].id;
+                                    $http({
+                                        method: "post",
+                                        url: sendurl,
+                                        headers:{
+                                            "Content-Type":'application/json;charset=UTF-8'
+                                        },
+                                        data: sendData
+                                    }).then(function successCallback(req){
+                                        console.log(req);
+                                        alert("success!");
+                                    }),
+                                        function errorCallback(req) {
+                                            alert("error!");
+                                        };
+                                }
+                                else if ($scope.choice[$scope.instance[i].id].name == "recovery")
+                                {
+                                    alert("you choose Recovery!");
+                                    var sendData={"operation": "recovery"};
+                                    var sendurl='adapter-management/service_instances/'+$scope.instance[i].id;
+                                    $http({
+                                        method: "post",
+                                        url: sendurl,
+                                        headers:{
+                                            "Content-Type":'application/json;charset=UTF-8'
+                                        },
+                                        data: sendData
+                                    }).then(function successCallback(req){
+                                        console.log(req);
+                                        alert("success!");
+                                    }),
+                                        function errorCallback(req) {
+                                            alert("error!");
+                                        };
+                                }
+                                else if ($scope.choice[$scope.instance[i].id].name == "patch")
+                                {
+                                    alert("you choose patch!");
+                                    var sendData={"operation": "patch"};
+                                    var sendurl='adapter-management/service_instances/'+$scope.instance[i].id;
+                                    $http({
+                                        method: "post",
+                                        url: sendurl,
+                                        headers:{
+                                            "Content-Type":'application/json;charset=UTF-8'
+                                        },
+                                        data: sendData
+                                    }).then(function successCallback(req){
+                                        console.log(req);
+                                        alert("success!");
+                                    }),
+                                        function errorCallback(req) {
+                                            alert("error!");
+                                        };
+                                }
+                                else if($scope.choice[$scope.instance[i].id].name == "delete")
+                                {
+                                    var y=confirm("are you sure to delete this service?");
+                                    if(y) {
+                                        var surl= 'adapter-management/service_instances/' + 'c0002'+'/last_operation';
+                                        $http.get(surl)
+                                            .then(function successCallback(response) {
+                                                    $scope.rev=response.data;
+                                                    if($scope.rev.state=="succeeded")
+                                                    {
+                                                        var sendurl = 'adapter-management/service_instances/' + id;
+                                                        $http({
+                                                            method: "delete",
+                                                            url: sendurl,
+                                                            headers: {
+                                                                "Content-Type": 'application/json;charset=UTF-8'
+                                                            },
+                                                        }).then(function successCallback(req) {
+                                                            console.log(req);
+                                                            alert("success!");
+                                                        }),
+                                                            function errorCallback(req) {
+                                                                alert("error!");
+                                                            };
+                                                    }
+                                                    else{
+                                                        alert("The service is now in process. Please try later!");
+                                                    }
+                                                },
+                                                function errorCallback(response) {
+                                                    console.log("error");
+                                                })
+                                    }
+                                }
+                            }
+                            else{
+                                alert("The service is now in process. Please try later!");   //如果不能操作则提示
+                            }
+                        },
+                        function errorCallback(response) {
+                            console.log("error");
+                        })
+
+            }
+        }
+    });
+</script>
+</html>

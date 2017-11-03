@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html  ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/angular.js/1.5.9/angular.min.js"></script>
+    <link rel="stylesheet" media="screen" href="hello.css" rel="external nofollow"  >
+</head>
+<body>
+
+<div ng-controller="siteCtrl">
+    <form class="contact_form" action="" method="post" name="contact_form">
+        <ul ng-repeat="x in instance">
+            <h2>Instance : {{x.id}}</h2>
+            <h3>Configuration</h3>
+            <li ng-repeat="y in x.configurations">
+                {{y.display_name}} : {{y.value}};
+            </li>
+            <h3>Operations</h3>
+            <li ng-repeat="z in x.operations">
+                {{z.display_name}};
+                <div ng-if="z.display==true">
+                    <h4>{{config_options}}</h4>
+                    <div ng-repeat="op in z.config_options">
+                        {{op.display_name}}
+                    </div>
+                </div>
+            </li>
+            <hr>
+        </ul>
+    </form>
+</div>
+</body>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('siteCtrl', function ($scope, $http) {
+        $http.get("data1.json")
+            .then(function successCallback(response) {
+                    $scope.instance = response.data.instances;
+                    for(var i in $scope.instance)
+                    {
+                        for(var j in $scope.instance[i].operations)
+                        {
+                                $scope.instance[i].operations[j].display=angular.isDefined($scope.instance[i].operations[j].config_options);;
+                        }
+                    }
+                },
+                function errorCallback(response) {
+                    console.log("error");
+                });
+        $scope.arrangement = function (x) {
+            console.log(x.name);
+        }
+    });
+
+</script>
+</html>

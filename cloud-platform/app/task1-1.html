@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html  ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/angular.js/1.5.9/angular.min.js"></script>
+    <link rel="stylesheet" media="screen" href="hello.css" rel="external nofollow"  > <!--加载css文件-->
+</head>
+<body>
+
+<div ng-controller="mainCtrl"> <!--主控制器-->
+    <form class="contact_form" action="" method="post" name="contact_form" ng-controller="formData" ng-submit="submit()">  <!--表单控制器-->
+    <ul>
+        <h2>list</h2>
+        <hr>
+        <li>
+            <input type="text" name="instance_id" id="instance_id" ng-model="formData.instance_id" required>   <!--json文件中没有instance_id，手动加入-->
+            <label for="instance_id">Instance ID</label>
+        </li>
+        <li>
+            <select ng-model="formData.service_id" name="selectedServices" id="selectedServices" ng-options="option.name for option in names[0].services" required><!--下拉菜单-->
+            </select>
+            <label for="selectedServices">服务</label>
+            <span class="success" ng-show="contact_form.selectedServices.$valid">Good!</span><!--提示消息-->
+            <span class="error" ng-show="contact_form.selectedServices.$dirty&&contact_form.selectedServices.$error.required">Required!</span>
+        </li>
+        <li>
+            <input type="text" name="org_id" id="org_id" ng-model="formData.org_id" required>
+            <label for="org_id">org ID</label>
+        </li>
+        <li ng-repeat="x in names[0].services[0].config_options"><!--循环展示选项-->
+            <div ng-if="x.data_typeb==true">
+                <div ng-if="x.required==true">
+                    <input type="text" name="{{x.name}}" id="{{x.name}}" ng-model="formData.parameters[x.name]" required />
+                    <label for="{{x.name}}">{{x.display_name}}</label><br>
+                </div>
+              <!--  <span ng-show="form.text.$error.required">必填</span>-->
+
+                <div ng-if="x.required==false">
+                    <input type="text" name="{{x.name}}+'1'" id="{{x.name}}+'1'" ng-model="formData.parameters[x.name]" />
+                    <label for="{{x.name}}+'1'">{{x.display_name}}</label><br>
+                </div>
+            </div>
+                <!--  <span ng-show="form.text.$error.required">必填</span>-->
+            <div ng-if="x.data_typeb==false">
+                <div ng-if="x.required==true">
+
+                <select ng-model="formData.parameters[x.name]" name="{{x.name}}+'2'" id="{{x.name}}+'2'" ng-options="opt.value for opt in x.values" required>
+                </select>
+                    <label for="{{x.name}}+'2'">{{x.display_name}}</label>
+            </div>
+                <div ng-if="x.required==false">
+                    <label for="{{x.name}}+'3'">{{x.display_name}}</label>
+                    <select ng-model="formData.parameters[x.name]" name="{{x.name}}+'3'" id="{{x.name}}+'3'" ng-options="opt.value for opt in x.values" >
+                    </select>
+                </div>
+            </div>
+        </li>
+        <hr>
+        <p>{{myTxt}}</p>
+    </ul>
+            <button class="submit" type="submit">Submit Form</button>
+     <!--   <a ng-click="sayHello()">Say hello</a>-->
+    </form>
+</div>
+</body>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('mainCtrl', function ($scope, $http) {            //主控制器
+            $http.get("data.json")                   //读取表单信息
+                .then(function successCallback(response) {
+                        $scope.names = response.data.suppliers;        //服务器接收数据格式规范，详见手册
+                        $scope.formData={};
+                        $scope.paraname={};
+                        $scope.formData.instance_id="c0004";
+                        $scope.formData.org_id="citicbank";
+                        $scope.formData.parameters={};
+                        $scope.formData.accepts_incomplete=true;
+                        $scope.formData.pricing_model={"mode":"package","unit":"monthly","amount":"12"};
+                        $scope.sendData={};
+                        for (var i in $scope.names[0].services[0].config_options) {
+                            var res=$scope.names[0].services[0].config_options[i].name;
+                            $scope.paraname[i]=res;
+                            var str = $scope.names[0].services[0].config_options[i].data_type;
+                            var dtstr = "string";
+                            var dtopt = "options";
+                            if (str == dtstr) {
+                                $scope.names[0].services[0].config_options[i].data_typeb = true;
+                                $scope.formData.parameters[res]=$scope.names[0].services[0].config_options[i].default;
+                            }
+                            else if (str == dtopt) {
+                                $scope.names[0].services[0].config_options[i].data_typeb = false;
+                                if($scope.names[0].services[0].config_options[i].default=="")
+                                {
+                                    $scope.formData.parameters[res]={};
+                                }
+                                else {
+                                    for (var j in $scope.names[0].services[0].config_options[i].values) {
+                                        if ($scope.names[0].services[0].config_options[i].values[j].key == $scope.names[0].services[0].config_options[i].default) {
+                                            $scope.formData.parameters[res] = $scope.names[0].services[0].config_options[i].values[j];
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+
+                    function errorCallback(response) {
+                        console.log("error");
+                    });
+            //    console.log($scope.names[0].services[0].name);
+        });
+        app.controller("formData",function ($scope, $http) {            //提交表单控制器
+        $scope.myTxt = "You have not yet clicked submit";
+                    $scope.submit = function() {
+                        $scope.sendData.instance_id=$scope.formData.instance_id;    //规范提交数据格式
+                        $scope.sendData.parameters={};
+                        $scope.sendData.org_id=$scope.formData.org_id;
+                        $scope.sendData.accepts_incomplete=$scope.formData.accepts_incomplete;
+                        $scope.sendData.pricing_model=$scope.formData.pricing_model;
+                        $scope.sendData.service_id=$scope.formData.service_id.id;
+                        $scope.sendData.parameters.failoverDatabase="no";
+                        for(var i in $scope.paraname)
+                        {
+                            var res=$scope.paraname[i];
+                            if(res=="cloudStorageContainer")   //去除两个不需要的参数，根据需求进行修改
+                            {
+                                continue;
+                            }
+                            else if(res=="cloudStoragePwd")
+                            {
+                    continue;
+                }
+                else if(res=="cloudStorageUser")
+                {
+                    continue;
+                }
+                else {
+                    var x = $scope.formData.parameters[res];
+                    var y = angular.isString(x);
+                    if (y) {
+                        $scope.sendData.parameters[res] = $scope.formData.parameters[res];
+                    }
+                    else {
+                        $scope.sendData.parameters[res] = $scope.formData.parameters[res].key;
+                    }
+                }
+            }
+
+            var r=confirm("Are you sure?");    //确定提交表单
+            if(r==true)
+            {
+                $http({
+                    method: "put",
+                    url:"adapter-management/service_instances/c0004",               //发送数据
+                    headers:{
+                        "Content-Type":'application/json;charset=UTF-8'
+                    },
+                    data:$scope.sendData
+                }).then(function successCallback(req){
+                    console.log(req);
+                    alert("success!");
+                }),
+                    function errorCallback(req) {
+                        alert("error!");
+                    };
+            }
+            else if(r==false){
+                alert("you canceled!");
+            }
+            };
+});
+
+</script>
+</html>
